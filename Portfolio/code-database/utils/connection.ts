@@ -2,6 +2,7 @@
 import mongoose, { Model } from 'mongoose';
 import { Directory } from "../models/Directory";
 import { DirFile } from "../models/DirFile";
+import { DirFileLine } from "../models/DirFileLine";
 import { Project } from '../models/Project';
 import { Todo } from "../models/Todo";
 
@@ -15,5 +16,5 @@ export const connect = async () => {
 	const conn = await mongoose.connect(uri).catch((err) => console.log(err));
 	console.log('Mongoose Connection Established');
 
-	return { conn, Todo, Directory, Project, DirFile };
+	return { conn, Todo, Directory, Project, DirFile, DirFileLine };
 };
